@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Green Blooming Play School</title>
+    <meta name="description"
+        content="View our gallery of school building, facilities, and happy moments from events at Green Blooming Play School.">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--bg-cream);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: white;
+            border: 2px solid var(--color-primary-light);
+            color: var(--text-main);
+            padding: 10px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: var(--font-heading);
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
+        .gallery-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .gallery-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            height: 250px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-contacts">
+                <span><i class="fas fa-phone-alt"></i> 7688999951</span>
+                <span><i class="fas fa-envelope"></i> greenbloomingplayschool@gmail.com</span>
+            </div>
+            <div class="top-message">
+                Where little dreams blossom <i class="fas fa-flower"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo-container">
+                <img src="assets/images/logo-cut.jpg" alt="Green Blooming Logo"
+                    style="height: 50px; width: auto; margin-right: 10px;">
+                <div class="logo-text">
+                    <h2>Green Blooming</h2>
+                    <span>Play School</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#programs" class="nav-link">Programs</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-buttons">
+                <a href="index.html#contact" class="btn btn-outline"
+                    style="border-radius: 50px; padding: 8px 20px;">Schedule Tour</a>
+                <a href="https://wa.me/917688999951" class="btn btn-primary"
+                    style="border-radius: 50px; padding: 8px 20px;"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+            </div>
+
+            <div class="mobile-toggle mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header -->
+    <div class="page-header">
+        <div class="container">
+            <span class="badge">Memories</span>
+            <h1 class="section-title">Our Gallery</h1>
+            <p class="section-subtitle">Explore our school building, classrooms, and joyful moments from our events.</p>
+        </div>
+    </div>
+
+    <!-- Gallery Content -->
+    <div class="container" style="padding-bottom: 80px;">
+
+        <div class="gallery-tabs">
+            <button class="tab-btn active" onclick="showGallery('building')">School Building & Infra</button>
+            <button class="tab-btn" onclick="showGallery('events')">Events & Celebrations</button>
+        </div>
+
+        <!-- Building Gallery -->
+        <div id="building" class="gallery-section active">
+            <div class="full-gallery-grid">
+                <!-- Placeholders for Building Images -->
+                <div class="photo-card">
+                    <i class="fas fa-school fa-3x" style="color: #90A4AE;"></i>
+                    <div class="photo-caption">Main School Building</div>
+                </div>
+                <div class="photo-card">
+                    <i class="fas fa-chalkboard fa-3x" style="color: #90A4AE;"></i>
+                    <div class="photo-caption">Spacious Classroom</div>
+                </div>
+                <div class="photo-card">
+                    <i class="fas fa-shapes fa-3x" style="color: #90A4AE;"></i>
+                    <div class="photo-caption">Play Area</div>
+                </div>
+                <div class="photo-card">
+                    <i class="fas fa-book-reader fa-3x" style="color: #90A4AE;"></i>
+                    <div class="photo-caption">Library Corner</div>
+                </div>
+                <div class="photo-card">
+                    <i class="fas fa-paint-brush fa-3x" style="color: #90A4AE;"></i>
+                    <div class="photo-caption">Art Room</div>
+                </div>
+                <div class="photo-card">
+                    <i class="fas fa-couch fa-3x" style="color: #90A4AE;"></i>
+                    <div class="photo-caption">Reception Area</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Gallery -->
+        <div id="events" class="gallery-section">
+            <div class="full-gallery-grid">
+                <!-- Placeholders for Events Images -->
+                <div class="photo-card" style="background: #FFF3E0;">
+                    <i class="fas fa-birthday-cake fa-3x" style="color: #FF9800;"></i>
+                    <div class="photo-caption">Birthday Celebrations</div>
+                </div>
+                <div class="photo-card" style="background: #E1F5FE;">
+                    <i class="fas fa-flag fa-3x" style="color: #03A9F4;"></i>
+                    <div class="photo-caption">Independence Day</div>
+                </div>
+                <div class="photo-card" style="background: #F3E5F5;">
+                    <i class="fas fa-music fa-3x" style="color: #9C27B0;"></i>
+                    <div class="photo-caption">Annual Concert</div>
+                </div>
+                <div class="photo-card" style="background: #E8F5E9;">
+                    <i class="fas fa-tree fa-3x" style="color: #4CAF50;"></i>
+                    <div class="photo-caption">Green Day</div>
+                </div>
+                <div class="photo-card" style="background: #FFEBEE;">
+                    <i class="fas fa-heart fa-3x" style="color: #E91E63;"></i>
+                    <div class="photo-caption">Mother's Day</div>
+                </div>
+                <div class="photo-card" style="background: #FFF8E1;">
+                    <i class="fas fa-sun fa-3x" style="color: #FFC107;"></i>
+                    <div class="photo-caption">Summer Camp</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-curve">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-logo">
+                    <div class="logo-container" style="color:white; margin-bottom: 20px;">
+                        <i class="fas fa-seedling fa-2x" style="color: #66BB6A;"></i>
+                        <div class="logo-text">
+                            <h2 style="color:white;">Green Blooming</h2>
+                            <span style="color:#A5D6A7;">Play School</span>
+                        </div>
+                    </div>
+                    <p class="footer-desc">
+                        Where little dreams blossom. Nurturing young minds with love, creativity, and joy-filled
+                        learning.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#programs">Programs</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Our Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Play Group</a></li>
+                        <li><a href="#">Nursery</a></li>
+                        <li><a href="#">LKG</a></li>
+                        <li><a href="#">UKG</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Behind Greenland School, Gandhi Chowk, Nokha, Bikaner, Rajasthan</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>7688999951</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>greenbloomingplayschool@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Green Blooming Play School. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Simple Tab Script for Gallery
+        function showGallery(category) {
+            // Hide all sections
+            document.querySelectorAll('.gallery-section').forEach(el => el.classList.remove('active'));
+            // Remove active class from buttons
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+            // Show selected section
+            document.getElementById(category).classList.add('active');
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
