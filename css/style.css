@@ -2613,77 +2613,157 @@ footer {
 }
 
 /* =============================================
-   Instagram Reel & Video Cards
+   Event Small Box Cards (Events & Color Days)
+   ============================================= */
+.event-box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.event-box-card {
+    border-radius: 20px;
+    padding: 24px 20px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 160px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-box-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.event-box-card i.event-icon {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.event-box-card h4 {
+    font-size: 1.15rem;
+    color: white;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+.event-box-card .event-link-text {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.22);
+    padding: 5px 14px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+/* Event Specific Gradients */
+.bg-event-blue { background: linear-gradient(135deg, #0288D1 0%, #01579B 100%); }
+.bg-event-brown { background: linear-gradient(135deg, #795548 0%, #4E342E 100%); }
+.bg-event-choc { background: linear-gradient(135deg, #8D6E63 0%, #3E2723 100%); }
+.bg-event-pink { background: linear-gradient(135deg, #EC407A 0%, #AD1457 100%); }
+.bg-event-red { background: linear-gradient(135deg, #E53935 0%, #B71C1C 100%); }
+.bg-event-silver { background: linear-gradient(135deg, #78909C 0%, #37474F 100%); }
+.bg-event-green { background: linear-gradient(135deg, #43A047 0%, #1B5E20 100%); }
+.bg-event-diwali { background: linear-gradient(135deg, #FFB300 0%, #E65100 100%); }
+.bg-event-mother1 { background: linear-gradient(135deg, #FF7043 0%, #D84315 100%); }
+.bg-event-mother2 { background: linear-gradient(135deg, #AB47BC 0%, #6A1B9A 100%); }
+.bg-event-cat { background: linear-gradient(135deg, #7E57C2 0%, #4527A0 100%); }
+.bg-event-akshaya { background: linear-gradient(135deg, #9CCC65 0%, #33691E 100%); }
+
+/* =============================================
+   Instagram Reel & Video Cards (Fixed Bounds)
    ============================================= */
 .reels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 22px;
     margin-top: 30px;
 }
 
 .reel-card {
     position: relative;
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
-    height: 320px;
+    height: 250px;
+    max-height: 250px;
     background: #111;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     text-decoration: none;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .reel-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 16px 35px rgba(220, 39, 67, 0.25);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(220, 39, 67, 0.3);
 }
 
 .reel-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    max-height: 250px;
     object-fit: cover;
-    opacity: 0.88;
-    transition: transform 0.5s ease, opacity 0.3s ease;
+    opacity: 0.82;
+    transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
 .reel-card:hover img {
     transform: scale(1.08);
-    opacity: 0.95;
+    opacity: 0.92;
 }
 
 .reel-badge {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 12px;
+    left: 12px;
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 20px;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    gap: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     z-index: 2;
 }
 
 .reel-play-icon {
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.9);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.9);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.92);
     color: #dc2743;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    font-size: 1.2rem;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, background 0.3s ease;
     z-index: 2;
 }
@@ -2695,37 +2775,35 @@ footer {
 }
 
 .reel-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    position: relative;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.88));
     color: white;
     z-index: 2;
+    text-align: left;
 }
 
 .reel-info h4 {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: white;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     font-family: var(--font-body);
     font-weight: 600;
 }
 
 .reel-info span {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
 }
 
 .sub-category-heading {
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--color-primary-dark);
-    margin: 40px 0 20px 0;
+    margin: 35px 0 18px 0;
     padding-bottom: 8px;
     border-bottom: 2px dashed var(--color-primary-light);
     display: flex;
