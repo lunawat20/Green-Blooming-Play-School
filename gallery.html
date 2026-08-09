@@ -236,18 +236,23 @@
             </div>
         </div>
 
-        <!-- Events & Color Days Gallery (Neat Event Boxes) -->
+        <!-- Events & Color Days Gallery -->
         <div id="events" class="gallery-section">
             <h3 class="sub-category-heading"><i class="fas fa-palette"></i> Color Days & Celebrations</h3>
-            <p style="text-align: left; color: var(--text-light); margin-bottom: 20px;">Click on any event box below to watch live event videos and reels on Instagram!</p>
+            <p style="text-align: left; color: var(--text-light); margin-bottom: 20px;">Click on **Blue Day** or any event box to view its full photo album or watch event reels on Instagram!</p>
             
             <div class="event-box-grid">
-                <!-- Blue Day -->
-                <a href="https://www.instagram.com/p/DX9TeluE7LP/?img_index=1" target="_blank" class="event-box-card bg-event-blue">
-                    <i class="fas fa-paint-brush event-icon"></i>
+                <!-- Blue Day (Album Trigger + Instagram Link) -->
+                <div class="event-box-card bg-event-blue" onclick="openEventAlbum('blue-day')" style="cursor: pointer;">
+                    <i class="fas fa-images event-icon"></i>
                     <h4>Blue Day Celebration</h4>
-                    <span class="event-link-text"><i class="fab fa-instagram"></i> Watch Reel</span>
-                </a>
+                    <div style="display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; justify-content: center;">
+                        <span class="event-link-text"><i class="fas fa-camera"></i> View 12 Photos</span>
+                        <a href="https://www.instagram.com/p/DX9TeluE7LP/?img_index=1" target="_blank" onclick="event.stopPropagation();" class="event-link-text" style="background: rgba(0,0,0,0.35);">
+                            <i class="fab fa-instagram"></i> Reel
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Brown Day 1 -->
                 <a href="https://www.instagram.com/p/DYCoqxZE57x/?img_index=1" target="_blank" class="event-box-card bg-event-brown">
@@ -320,137 +325,126 @@
                 </a>
 
                 <!-- Akshaya Tritiya -->
-                <a href="#" class="event-box-card bg-event-akshaya">
+                <div class="event-box-card bg-event-akshaya" onclick="openEventAlbum('akshaya-tritiya')" style="cursor: pointer;">
                     <i class="fas fa-sun event-icon"></i>
                     <h4>Akshaya Tritiya Celebration</h4>
-                    <span class="event-link-text"><i class="fas fa-star"></i> School Event</span>
-                </a>
+                    <span class="event-link-text"><i class="fas fa-camera"></i> View Photo</span>
+                </div>
             </div>
         </div>
 
-        <!-- Instagram Reels Tab -->
+        <!-- Instagram Reels Tab (Image-Free Clean Cards) -->
         <div id="reels" class="gallery-section">
             <h3 class="sub-category-heading"><i class="fab fa-instagram"></i> Featured Instagram Reels</h3>
-            <p style="text-align: left; color: var(--text-light); margin-bottom: 20px;">Click any reel card below to watch our live video moments on Instagram!</p>
+            <p style="text-align: left; color: var(--text-light); margin-bottom: 20px;">Click any reel card below to watch our live video moments directly on Instagram!</p>
             <div class="reels-grid">
                 <!-- Cat Visitor -->
-                <a href="https://www.instagram.com/p/Dbdjt2KTcwg/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Campus Special</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img11.jpg" alt="Cute Cat Visitor Reel">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/Dbdjt2KTcwg/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #7E57C2 0%, #4527A0 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Reel</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Cute Cat Visitor in Campus 🐾</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Diwali -->
-                <a href="https://www.instagram.com/p/DP_zhbAE94W/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Festival</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img6.jpg" alt="Diwali Reel">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DP_zhbAE94W/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #FFB300 0%, #E65100 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Festival</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Diwali Celebration ✨</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Mother's Day 1 -->
-                <a href="https://www.instagram.com/p/DYJpGRLzzYX/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Mother's Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img2.jpg" alt="Mother's Day Reel 1">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DYJpGRLzzYX/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #FF7043 0%, #D84315 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Mother's Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Mother's Day Special ❤️</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Mother's Day 2 -->
-                <a href="https://www.instagram.com/p/DYJRX_eTCef/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Mother's Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img1.jpg" alt="Mother's Day Reel 2">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DYJRX_eTCef/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #AB47BC 0%, #6A1B9A 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Mother's Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Mother's Day Joyful Moments 💕</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Pink Day -->
-                <a href="https://www.instagram.com/p/DYE80NMzKYj/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Color Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img12.jpg" alt="Pink Day Reel">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DYE80NMzKYj/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #EC407A 0%, #AD1457 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Color Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Pink Day Celebration 🌸</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Brown Day 1 -->
-                <a href="https://www.instagram.com/p/DYCoqxZE57x/?img_index=1" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Color Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img13.jpg" alt="Brown Day Reel 1">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DYCoqxZE57x/?img_index=1" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #795548 0%, #4E342E 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Color Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Brown Day Special 🤎</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Silver Day -->
-                <a href="https://www.instagram.com/p/DYHJ57szszY/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Color Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img14.jpg" alt="Silver Day Reel">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DYHJ57szszY/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #78909C 0%, #37474F 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Color Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Silver Day Celebration 🩶</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Green Day -->
-                <a href="https://www.instagram.com/p/DX_sUj_zv76/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Color Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img4.jpg" alt="Green Day Reel">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DX_sUj_zv76/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #43A047 0%, #1B5E20 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Color Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Green Day Celebration 💚</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Blue Day -->
-                <a href="https://www.instagram.com/p/DX9TeluE7LP/?img_index=1" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Color Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img3.jpg" alt="Blue Day Reel">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DX9TeluE7LP/?img_index=1" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #0288D1 0%, #01579B 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Color Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Blue Day Fun 💙</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Brown Day 2 -->
-                <a href="https://www.instagram.com/p/DYCVVs4TBtD/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Color Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img8.jpg" alt="Brown Day Reel 2">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DYCVVs4TBtD/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #8D6E63 0%, #3E2723 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Color Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Brown Day Memories 🍫</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
 
                 <!-- Red Day -->
-                <a href="https://www.instagram.com/p/DX6PDVWzF2D/" target="_blank" class="reel-card">
-                    <div class="reel-badge"><i class="fab fa-instagram"></i> Color Day</div>
-                    <div class="reel-play-icon"><i class="fas fa-play"></i></div>
-                    <img src="assets/images/img7.jpg" alt="Red Day Reel">
-                    <div class="reel-info">
+                <a href="https://www.instagram.com/p/DX6PDVWzF2D/" target="_blank" class="reel-card-clean" style="background: linear-gradient(135deg, #E53935 0%, #B71C1C 100%);">
+                    <div class="reel-top-tag"><i class="fab fa-instagram"></i> Color Day</div>
+                    <div class="reel-play-circle"><i class="fas fa-play"></i></div>
+                    <div>
                         <h4>Red Day Celebration ❤️</h4>
-                        <span><i class="fas fa-external-link-alt"></i> Watch Reel on Instagram</span>
+                        <span class="reel-cta-btn">Watch on Instagram <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </a>
             </div>
