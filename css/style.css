@@ -2545,12 +2545,14 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.88);
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(6px);
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 10000;
+    z-index: 20000;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .lightbox.active {
@@ -2559,45 +2561,49 @@ footer {
 }
 
 @keyframes fadeInLB {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
 }
 
 .lightbox-inner {
     position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 95vw;
+    max-height: 92vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .lightbox-img {
-    max-width: 100%;
-    max-height: 80vh;
+    max-width: 90vw;
+    max-height: 82vh;
+    width: auto;
+    height: auto;
     border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
     object-fit: contain;
 }
 
 .lightbox-close {
     position: absolute;
-    top: -15px;
-    right: -15px;
-    width: 36px;
-    height: 36px;
+    top: -18px;
+    right: -18px;
+    width: 40px;
+    height: 40px;
     background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     cursor: pointer;
     color: var(--text-main);
     font-weight: bold;
     line-height: 1;
-    z-index: 10;
-    transition: background 0.2s;
+    z-index: 20010;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s, background 0.2s;
 }
 
 .lightbox-close:hover {
